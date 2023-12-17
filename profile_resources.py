@@ -13,7 +13,7 @@ class ProfileResource:
             host="localhost",
             port=3306,
             user="root",
-            password="Fyx44243774",
+            password="dbuserdbuser",
             cursorclass=pymysql.cursors.DictCursor,
             autocommit=True
 
