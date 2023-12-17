@@ -10,12 +10,12 @@ class ProfileResource:
     def get_connection():
         conn = pymysql.connect(
             # LOCAL
-            host="localhost",
-            port=3306,
-            user="root",
-            password="dbuserdbuser",
-            cursorclass=pymysql.cursors.DictCursor,
-            autocommit=True
+            # host="localhost",
+            # port=3306,
+            # user="root",
+            # password="dbuserdbuser",
+            # cursorclass=pymysql.cursors.DictCursor,
+            # autocommit=True
 
             # AWS
             # host="customerdb.cvjaygaiwg1r.us-east-1.rds.amazonaws.com",
