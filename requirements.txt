@@ -1,0 +1,38 @@
+annotated-types==0.6.0
+anyio==3.7.1
+argon2-cffi @ file:///opt/conda/conda-bld/argon2-cffi_1645000214183/work
+argon2-cffi-bindings @ file:///opt/concourse/worker/volumes/live/cf502f86-3f51-4f85-686b-4867f6d672bd/volume/argon2-cffi-bindings_1644569704808/work
+bcrypt @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b550nfy8c3/croots/recipe/bcrypt_1659554333520/work
+certifi==2023.11.17
+cffi @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_44mvycfmuf/croot/cffi_1700254431144/work
+charset-normalizer==3.3.2
+click @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_f27dk3zwrb/croot/click_1698129816363/work
+cryptography @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_19sc_35nzq/croot/cryptography_1694211574676/work
+docopt==0.6.2
+ecdsa @ file:///tmp/build/80754af9/ecdsa_1622554921100/work
+exceptiongroup==1.2.0
+fastapi==0.104.1
+future @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_27i98bxita/croot/future_1677599886956/work
+h11 @ file:///tmp/build/80754af9/h11_1620423447028/work
+idna==3.6
+Jinja2 @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_6adj7x0ejx/croot/jinja2_1666908137966/work
+MarkupSafe @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_d4a9444f-bd4c-4043-b47d-cede33979b0fve7bm42r/croots/recipe/markupsafe_1654597878200/work
+passlib==1.7.4
+pipreqs==0.4.13
+pyasn1 @ file:///Users/ktietz/demo/mc3/conda-bld/pyasn1_1629708007385/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pycryptodome @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_27562593-71a8-45e2-8fc7-2dfadfb41e70j6urw04g/croots/recipe/pycryptodome_1658311003559/work
+pydantic==2.5.2
+pydantic_core==2.14.5
+PyMySQL @ file:///Users/builder/ci_310/pymysql_1642547169457/work
+python-jose @ file:///tmp/build/80754af9/python-jose_1623673016654/work
+python-multipart==0.0.6
+requests==2.31.0
+rsa @ file:///tmp/build/80754af9/rsa_1614366226499/work
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+sniffio==1.3.0
+starlette==0.27.0
+typing_extensions==4.8.0
+urllib3==2.1.0
+uvicorn @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_d80hhx7s7h/croot/uvicorn-split_1678090080474/work
+yarg==0.1.9

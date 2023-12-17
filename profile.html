@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>Welcome, {{ user_info.name }}!</h1>
+    <p>Email: {{ user_info.email }}</p>
+    <p>Interest: {{ user_info.interest }}</p>
+    <p>Schedule: {{ user_info.schedule }}</p>
+    </div>
+    <button type="submit" class="btn btn-primary">Menu</button>
+
+    <form method="POST">
+        <input type="text" name="interest" placeholder="Enter new interest"><br>
+        <input type="text" name="schedule" placeholder="Enter new schedule"><br>
+        <input type="submit" value="Update Content">
+    </form>
+</body>
+</html>

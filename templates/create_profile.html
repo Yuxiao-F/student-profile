@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Profile</title>
+</head>
+<body>
+    <h1>Create Profile</h1>
+    <form action="/create_profile/{{ uni }}" method="post"> <!-- 注意这里的动态替换 -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="interest">Interest:</label><br>
+        <input type="text" id="interest" name="interest"><br>
+
+        <label for="schedule">Schedule:</label><br>
+        <input type="text" id="schedule" name="schedule"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
