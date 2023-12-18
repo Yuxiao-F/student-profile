@@ -14,31 +14,33 @@ async def root():
 
 
 @app.post("/profile/{uni}")
-async def update_profile(uni: str, interest: str = Form(...), schedule: str = Form(...)):
+async def update_profile(request: Request, uni: str, interest: str = Form(...), schedule: str = Form(...)):
     # result = ProfileResource.get_profile_by_uni(uni)
 
     new_content = [uni, interest, schedule]
     # print(new_content)
     ProfileResource.update_account(new_content)
     result = ProfileResource.get_profile_by_uni(uni)
-
-    return {"message": f"Profile with uni: {uni} updated successfully"}
+    # return {"message": f"Profile with uni: {uni} updated successfully"}
+    return templates.TemplateResponse("profile.html", {"request": request, "user_info": result})
 
 
 @app.post("/create_profile/{uni}")
-def create_profile(uni: str, name: str = Form(...), interest: str = Form(...), schedule: str = Form(...), email: str = Form(...)):
+def create_profile(request: Request, uni: str, name: str = Form(...), interest: str = Form(...), schedule: str = Form(...), email: str = Form(...)):
     new_content = [uni, name, interest, schedule, email]
     # print(new_content)
-    profile = ProfileResource.create_account(new_content)
-    # return RedirectResponse(url=f"/profile/{uni}")
-    return {"message": "Profile created successfully"}
+    ProfileResource.create_account(new_content)
+    result = ProfileResource.get_profile_by_uni(uni)
+    return templates.TemplateResponse("profile.html", {"request": request, "user_info": result})
+    # return {"message": "Profile created successfully"}
+
 
 
 @app.post("/delete_profile/{uni}")
-async def delete_profile(uni: str):
-    success = ProfileResource.delete_profile_by_uni(uni)
-
-    return {"message": f"Profile with uni: {uni} deleted successfully"}
+async def delete_profile(request: Request, uni: str):
+    ProfileResource.delete_profile_by_uni(uni)
+    return templates.TemplateResponse("create_profile.html", {"request": request})
+    # return {"message": f"Profile with uni: {uni} deleted successfully"}
 
 
 @app.get("/profile/{uni}", response_class=HTMLResponse)
