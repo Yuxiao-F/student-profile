@@ -175,35 +175,39 @@ async def login_for_access_token(
     # return {"access_token": access_token, "token_type": "bearer"}
 
 
-@app.route("/profile/{uni}", methods=["GET", "POST"])
+# @app.route("/profile/{uni}", methods=["GET", "POST"])
+# async def profile_form(request: Request, uni: str):
+#     if request.method == "POST":
+#         access_token = request.cookies.get("access_token")
+#         if not access_token:
+#             return RedirectResponse(url="/login")
+#
+#         result = ProfileResource.get_profile_by_uni(uni)
+#         return templates.TemplateResponse("profile.html", {"request": request, "user_info": result})
+#
+#     elif request.method == "GET":
+#         result = ProfileResource.get_profile_by_uni(uni)
+#         return templates.TemplateResponse("profile.html", {"request": request, "user_info": result})
+
+
+@app.post("/profile/{uni}", response_class=HTMLResponse)
 async def profile_form(request: Request, uni: str):
-    if request.method == "POST":
-        access_token = request.cookies.get("access_token")
-        if not access_token:
-            return RedirectResponse(url="/login")
+    access_token = request.cookies.get("access_token")
+    if not access_token:
+        return RedirectResponse(url="/login")
 
-        result = ProfileResource.get_profile_by_uni(uni)
-        return templates.TemplateResponse("profile.html", {"request": request, "user_info": result})
+    result = ProfileResource.get_profile_by_uni(uni)
+    return templates.TemplateResponse("profile.html", {"request": request, "user_info": result})
 
-    elif request.method == "GET":
-        result = ProfileResource.get_profile_by_uni(uni)
-        return templates.TemplateResponse("profile.html", {"request": request, "user_info": result})
-
-
-# @app.post("/profile/{uni}", response_class=HTMLResponse)
-# async def profile_form(request: Request, uni: str):
-#     access_token = request.cookies.get("access_token")
-#     if not access_token:
-#         return RedirectResponse(url="/login")
 #
-#     result = ProfileResource.get_profile_by_uni(uni)
-#     return templates.TemplateResponse("profile.html", {"request": request, "user_info": result})
-#
-#
-# @app.get("/profile/{uni}", response_class=HTMLResponse)
-# async def profile_form(request: Request, uni: str):
-#     result = ProfileResource.get_profile_by_uni(uni)
-#     return templates.TemplateResponse("profile.html", {"request": request, "user_info": result})
+@app.get("/profile/{uni}", response_class=HTMLResponse)
+async def profile_form(request: Request, uni: str):
+    access_token = request.cookies.get("access_token")
+    if not access_token:
+        return RedirectResponse(url="/login")
+
+    result = ProfileResource.get_profile_by_uni(uni)
+    return templates.TemplateResponse("profile.html", {"request": request, "user_info": result})
 
 
 @app.get("/users/me/", response_model=User)
