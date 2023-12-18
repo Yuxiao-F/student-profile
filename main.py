@@ -20,8 +20,9 @@ async def update_profile(request: Request, uni: str, interest: str = Form(...), 
     new_content = [uni, interest, schedule]
     # print(new_content)
     ProfileResource.update_account(new_content)
+    result = ProfileResource.get_profile_by_uni(uni)
     # return {"message": f"Profile with uni: {uni} updated successfully"}
-    return templates.TemplateResponse("profile.html", {"request": request, "uni": uni})
+    return templates.TemplateResponse("profile.html", {"request": request, "user_info": result})
 
 
 @app.post("/create_profile/{uni}")
@@ -30,7 +31,7 @@ def create_profile(request: Request, uni: str, name: str = Form(...), interest: 
     # print(new_content)
     ProfileResource.create_account(new_content)
     result = ProfileResource.get_profile_by_uni(uni)
-    return templates.TemplateResponse("profile.html", {"request": request, "uni": uni})
+    return templates.TemplateResponse("profile.html", {"request": request, "user_info": result})
     # return {"message": "Profile created successfully"}
 
 
