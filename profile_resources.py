@@ -18,12 +18,12 @@ class ProfileResource:
             # autocommit=True
 
             # AWS
-            # host="customerdb.cvjaygaiwg1r.us-east-1.rds.amazonaws.com",
-            # port=3306,
-            # user="admin",
-            # password="dbuserdbuser",
-            # cursorclass=pymysql.cursors.DictCursor,
-            # autocommit=True
+            host="student-profile.ckg7exz2qnpf.us-east-2.rds.amazonaws.com",
+            port=3306,
+            user="admin",
+            password="dbuserdbuser",
+            cursorclass=pymysql.cursors.DictCursor,
+            autocommit=True
         )
 
         return conn
